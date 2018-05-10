@@ -27,7 +27,7 @@ public class QueryUtils {
     private static final String LOD_TAG = QueryUtils.class.getSimpleName();
 
     /**
-     * Create a private constructor because no one should ever create a {@link QueryUtils} object.
+     * Create a private constructor {@link QueryUtils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
      * directly from the class name QueryUtils (and an object instance of QueryUtils is not needed).
      */
@@ -35,7 +35,7 @@ public class QueryUtils {
     }
 
     /**
-     * Query the GUARDIAN dataset and return a list of {@link NewsApp} objects.
+     * Query the GUARDIAN data set and return a list of {@link NewsApp} objects.
      */
     public static List<NewsApp> fetchNewsAppData(String requestUrl) {
         //Create a URL object
@@ -152,15 +152,15 @@ public class QueryUtils {
                 // For a given article news, extract the JSONObject associated with the
                 // key called "results", which represents a list of all results
                 // for that article news.
-                JSONObject results = currentNewsApp.getJSONObject("results");
+                JSONObject response = currentNewsApp.getJSONObject("response");
                 // Extract the value for the key called "webTitle"
-                String artTitle = results.getString("webTitle");
+                String artTitle = response.getString("webTitle");
                 // Extract the value for the key called "sectionName"
-                String secName = results.getString("sectionName");
+                String secName = response.getString("sectionName");
                 //Extract the value for the key called "webPublicationDate".
-                String artDate = results.getString("webPublicationDate");
+                String artDate = response.getString("webPublicationDate");
                 //Extract the value for the key called"webUrl"
-                String url = results.getString("webUrl");
+                String url = response.getString("webUrl");
                 // Create a new {@link NewsApp} object with the artTitle, secName,artDate
                 // and url from the JSON response.
                 NewsApp newsApp = new NewsApp(artTitle, secName, artDate, url);
