@@ -11,15 +11,15 @@ public class NewsApp {
     /*Date of the article news*/
     private String mDate;
     /*Time of the article news */
-    private long mTime;
+//    private long mTime;
     /*Website URL of the article news*/
     private String mUrl;
 
-    public NewsApp(String articleTitle, String articleSection, String date, long time) {
+    public NewsApp(String articleTitle, String articleSection, String date, String url) {
         article_title = articleTitle;
         article_section = articleSection;
         mDate = date;
-        mTime = time;
+        mUrl = url;
     }
     /*Returns the article title of the article news*/
 
@@ -35,11 +35,6 @@ public class NewsApp {
 
     public String getDate() {
         return mDate;
-    }
-    /*Returns the time of the article news*/
-
-    public long getTime() {
-        return mTime;
     }
     /*Returns the website url of the article news*/
 
