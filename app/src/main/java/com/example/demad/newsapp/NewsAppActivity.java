@@ -19,16 +19,12 @@ import java.util.List;
 public class NewsAppActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<NewsApp>> {
     /**
-     * URL for earthquake data from the GUARDIAN dataset
-     */
-    private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?api-key=test";
-    /**
      * Constant value for the newsApp loader ID.
+     * Just in case multiple loaders are required at some stage
      */
-    private static int NEWSAPP_LOADER_ID = 1;
+    private static final int NEWSAPP_LOADER_ID = 1;
     /**
-     * Adapter for the list of newsApps
+     * Adapter for the list of news
      */
     private NewsAppAdapter mAdapter;
     /**
@@ -41,8 +37,8 @@ public class NewsAppActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_app);
         // Find a reference to the {@link ListView} in the layout
-        ListView newsAppListView = (ListView) findViewById(R.id.list);
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        ListView newsAppListView = findViewById(R.id.list);
+        mEmptyStateTextView = findViewById(R.id.empty_view);
         newsAppListView.setEmptyView(mEmptyStateTextView);
         // Create a new adapter that takes an empty list of newsApps as input
         mAdapter = new NewsAppAdapter(this, new ArrayList<NewsApp>());
@@ -57,7 +53,9 @@ public class NewsAppActivity extends AppCompatActivity
                 // Find the current article news that was clicked on
                 NewsApp currentNewsApp = mAdapter.getItem(position);
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
-                Uri newsAppUri = Uri.parse(currentNewsApp.getUrl());
+                Uri newsAppUri;
+                assert currentNewsApp != null;
+                newsAppUri = Uri.parse(currentNewsApp.getUrl());
                 // Create a new intent to view the article news URI
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, newsAppUri);
                 // Send the intent to launch a new activity
@@ -68,6 +66,7 @@ public class NewsAppActivity extends AppCompatActivity
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         // Get details on the currently active default data network
+        assert connMgr != null;
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         // If there is a network connection, fetch data
         if (networkInfo != null && networkInfo.isConnected()) {
@@ -89,19 +88,8 @@ public class NewsAppActivity extends AppCompatActivity
 
     @Override
     public Loader<List<NewsApp>> onCreateLoader(int id, Bundle args) {
-        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
-        Uri.Builder uriBuilder = baseUri.buildUpon();
-        uriBuilder.scheme("http");
-        uriBuilder.encodedAuthority("content.guardianapis.com");
-        uriBuilder.appendPath("search");
-        uriBuilder.appendQueryParameter("order-by","newest");
-        uriBuilder.appendQueryParameter("show-reference","author");
-        uriBuilder.appendQueryParameter("show-tag","contributor");
-        uriBuilder.appendQueryParameter("q","Android");
-        uriBuilder.appendQueryParameter("api-key","test");
-
         // Create a new loader for the given URL
-        return new NewsAppLoader(this, uriBuilder.toString());
+        return new NewsAppLoader(this);
     }
 
     @Override
@@ -114,6 +102,10 @@ public class NewsAppActivity extends AppCompatActivity
         // If there is a valid list of {@link NewsApp}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (newsApps != null && !newsApps.isEmpty()) {
+            //This will stop duplicate update of LisView after you click on item of ListView and come back to the NewsApp
+            mAdapter.setNotifyOnChange(false);
+            mAdapter.clear();
+            mAdapter.setNotifyOnChange(true);
             mAdapter.addAll(newsApps);
         }
     }
