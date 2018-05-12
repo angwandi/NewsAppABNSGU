@@ -77,14 +77,4 @@ public class NewsApp {
         return mUrl;
     }
 
-    @Override
-    public String toString() {
-        return "NewsApp{" +
-                "mArticle_title='" + mArticle_title + '\'' +
-                ",mArticle_section='" + mArticle_section + '\'' +
-                ",mDate='" + mDate + '\'' +
-                ",mAuthor='" + mAuthor + '\'' +
-                ",mUrl='" + mUrl + '\'' +
-                '}';
-    }
 }
