@@ -9,7 +9,11 @@
     android:id="@+id/list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" />
+    android:divider="@android:color/transparent"
+    android:dividerHeight="10dp"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    android:padding="16dp" />
   <!-- Empty view is only visible when the list has no items. -->
   <TextView
     android:id="@+id/empty_view"

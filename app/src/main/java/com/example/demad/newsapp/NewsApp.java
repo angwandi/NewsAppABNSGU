@@ -76,5 +76,4 @@ public class NewsApp {
     public String getUrl() {
         return mUrl;
     }
-
 }

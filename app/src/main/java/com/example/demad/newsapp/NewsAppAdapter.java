@@ -3,6 +3,7 @@ package com.example.demad.newsapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.design.chip.Chip;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +46,8 @@ public class NewsAppAdapter extends ArrayAdapter<NewsApp> {
         assert currentNewsApp != null;
         articleTitleTextView.setText(currentNewsApp.getArticle_title());
         //Find the TextView with ID article_section
-        TextView articleSectionTextView = listItemView.findViewById(R.id.article_section);
-        articleSectionTextView.setText(currentNewsApp.getArticle_section());
+        TextView articleSectionChip = listItemView.findViewById(R.id.article_section);
+        articleSectionChip.setText(currentNewsApp.getArticle_section());
         //Find the TextView with ID date
         TextView dateTextView = listItemView.findViewById(R.id.article_date);
         dateTextView.setText(currentNewsApp.getDate());

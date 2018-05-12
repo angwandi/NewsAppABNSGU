@@ -1,6 +1,7 @@
 package com.example.demad.newsapp;
 
 import android.net.Uri;
+import android.support.design.chip.Chip;
 import android.util.Log;
 
 import org.json.JSONArray;
