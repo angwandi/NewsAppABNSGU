@@ -15,7 +15,7 @@
 
     <TextView
       android:id="@+id/article_section"
-      style="@style/article_secition_style"
+      style="@style/article_section_style"
       tools:targetApi="lollipop"
       tools:text="Article Section" />
 

@@ -2,7 +2,9 @@ package com.example.demad.newsapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,7 @@ public class NewsAppAdapter extends ArrayAdapter<NewsApp> {
      * Returns a list item view that displays information about the article news at the given position
      * in the list of article news.
      */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @NonNull
     @SuppressLint("ViewHolder")
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {

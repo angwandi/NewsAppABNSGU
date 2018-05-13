@@ -38,6 +38,11 @@ public class NewsAppActivity extends AppCompatActivity
         setContentView(R.layout.activity_news_app);
         // Find a reference to the {@link ListView} in the layout
         ListView newsAppListView = findViewById(R.id.list);
+        /*Add header and footer views for the listView*/
+        View paddingTopAndBottom = new View(this);
+        paddingTopAndBottom.setMinimumHeight(10);
+        newsAppListView.addFooterView(paddingTopAndBottom);
+        newsAppListView.addHeaderView(paddingTopAndBottom);
         mEmptyStateTextView = findViewById(R.id.empty_view);
         newsAppListView.setEmptyView(mEmptyStateTextView);
         // Create a new adapter that takes an empty list of newsApps as input

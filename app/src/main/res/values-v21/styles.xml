@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="article_section_style">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:background">@drawable/text_background</item>
+    <item name="android:backgroundTint">@color/colorLightPrimary</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:padding">8dp</item>
+    <item name="android:textColor">@color/colorPrimaryText</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+</resources>
