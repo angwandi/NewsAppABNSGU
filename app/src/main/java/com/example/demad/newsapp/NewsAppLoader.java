@@ -19,6 +19,7 @@ public class NewsAppLoader extends AsyncTaskLoader<List<NewsApp>> {
 
     /**
      * Constructs a new {@link NewsAppLoader}.
+     *
      * @param context of the activity
      */
     NewsAppLoader(Context context) {

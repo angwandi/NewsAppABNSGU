@@ -1,7 +1,6 @@
 package com.example.demad.newsapp;
 
 import android.net.Uri;
-import android.support.design.chip.Chip;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -32,17 +31,32 @@ public class QueryUtils {
     private static final String LOD_TAG = QueryUtils.class.getSimpleName();
 
     /**
-     * @return uri url as string
+     * building and manipulating my uri url requests as string
      */
     private static String createStringUrl() {
         Uri.Builder baseUriBuilder = new Uri.Builder();
+        /*Please refer to the Guardian API website for more details*/
         baseUriBuilder.scheme("https")
                 .encodedAuthority("content.guardianapis.com")
+                /*Using search content endpoint to return all pieces of content in the API*/
+                /*can also be tags,sections,editions but remember to update your required data*/
                 .appendPath("search")
+                //Format parameter
+                .appendQueryParameter("format", "json")
+                //can be oldest,newest or relevance(default where q params is specified)
                 .appendQueryParameter("order-by", "newest")
+                /*can be author,isbn,imdb,basic-prefix,...*/
                 .appendQueryParameter("show-reference", "author")
+                /*can be all,contributor,keyword,newspaper-book,publication,series,tone,type,...*/
                 .appendQueryParameter("show-tags", "contributor")
-                .appendQueryParameter("q", "Android")
+                /*language parameter(ISO language code:fr,en)*/
+                .appendQueryParameter("lang", "en")
+                //default items per page is 10 but can get more(1-50)!!
+                .appendQueryParameter("page-size", "50")
+                //q parameter can be something like education,debate,economy,immigration,...
+                //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
+                .appendQueryParameter("q", "education AND (economy OR music OR immigration)")
+                //Free student key from the Guardian API website
                 .appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
         String url;
         url = baseUriBuilder.build().toString();

@@ -1,62 +1,36 @@
 <android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  style="@style/material_card_style"
   app:cardBackgroundColor="#f5f5f5">
 
   <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:id="@+id/title_section_layout"
+    style="@style/title_section_layout_style">
 
     <TextView
       android:id="@+id/article_tile"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:textColor="@color/colorPrimaryText"
-      android:textSize="24sp"
+      style="@style/article_title_style"
       tools:text="Article Title, It will the longest Title you've never seen in your life my friend." />
 
     <TextView
       android:id="@+id/article_section"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:background="@drawable/textbackground"
-      android:backgroundTint="@color/colorLightPrimary"
-      android:maxLines="1"
-      android:padding="8dp"
-      android:textColor="@color/colorPrimaryText"
-      android:textSize="12sp"
+      style="@style/article_secition_style"
       tools:targetApi="lollipop"
       tools:text="Article Section" />
 
     <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:orientation="horizontal">
+      android:id="@+id/date_author_layout"
+      style="@style/date_author_layout_style">
 
       <TextView
         android:id="@+id/article_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="start"
-        android:textSize="12sp"
+        style="@style/article_date_style"
         tools:text="May 10, 2018" />
 
       <TextView
         android:id="@+id/author"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="end"
-        android:textSize="12sp"
+        style="@style/article_author_style"
         tools:text="Dema Innocent" />
     </LinearLayout>
   </LinearLayout>
