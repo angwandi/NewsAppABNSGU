@@ -10,21 +10,22 @@
   <style name="article_section_style">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:layout_marginBottom">@dimen/dim_article_section_marginBottom</item>
     <item name="android:background">@drawable/text_background</item>
-    <item name="android:backgroundTint" tools:targetApi="lollipop">@color/colorLightPrimary</item>
-    <item name="android:maxLines">1</item>
-    <item name="android:padding">8dp</item>
-    <item name="android:textColor">@color/colorPrimaryText</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:backgroundTint" tools:targetApi="lollipop">
+      @color/colorArticleSection_backgroundTint
+    </item>
+    <item name="android:padding">@dimen/dim_article_section_padding</item>
+    <item name="android:textColor">@color/colorArticleSection_textColor</item>
+    <item name="android:textSize">@dimen/dim_article_section_textSize</item>
   </style>
 
   <style name="article_title_style">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:textColor">@color/colorPrimaryText</item>
-    <item name="android:textSize">24sp</item>
+    <item name="android:layout_marginBottom">@dimen/dim_article_title_marginBottom</item>
+    <item name="android:textColor">@color/colorArticleTitle_textColor</item>
+    <item name="android:textSize">@dimen/dim_article_title_textSize</item>
   </style>
 
   <style name="article_date_style">
@@ -32,7 +33,7 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_weight">1</item>
     <item name="android:gravity">start</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:textSize">@dimen/dim_article_date_textSize</item>
   </style>
 
   <style name="article_author_style">
@@ -40,26 +41,26 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_weight">1</item>
     <item name="android:gravity">end</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:textSize">@dimen/dim_article_author_textSize</item>
   </style>
 
   <style name="material_card_style">
     <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_height">match_parent</item>
   </style>
 
   <style name="title_section_layout_style">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:orientation">vertical</item>
-    <item name="android:paddingLeft">8dp</item>
-    <item name="android:paddingRight">8dp</item>
+    <item name="android:paddingLeft">@dimen/dim_title_section_layout_paddingLeft</item>
+    <item name="android:paddingRight">@dimen/dim_title_section_layout_paddingRight</item>
   </style>
 
   <style name="date_author_layout_style">
     <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:layout_marginBottom">@dimen/dim_date_author_layout_marginBottom</item>
     <item name="android:orientation">horizontal</item>
   </style>
 
@@ -67,10 +68,10 @@
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">match_parent</item>
     <item name="android:divider">@android:color/transparent</item>
-    <item name="android:dividerHeight">10dp</item>
+    <item name="android:dividerHeight">@dimen/dim_list_view_divider_height</item>
     <item name="android:orientation">vertical</item>
     <item name="android:scrollbars">none</item>
-    <item name="android:padding">16dp</item>
+    <item name="android:padding">@dimen/dim_list_view_divider_padding</item>
     <item name="android:clipToPadding">false</item>
     <item name="android:nestedScrollingEnabled" tools:targetApi="lollipop">true</item>
   </style>

@@ -7,4 +7,7 @@
   <color name="colorLightPrimary">#E1BEE7</color>
   <color name="colorSecondaryText">#757575</color>
   <color name="colorDivider">#BDBDBD</color>
+  <color name="colorArticleSection_backgroundTint">@color/colorLightPrimary</color>
+  <color name="colorArticleSection_textColor">@color/colorPrimaryText</color>
+  <color name="colorArticleTitle_textColor">@color/colorPrimaryText</color>
 </resources>
