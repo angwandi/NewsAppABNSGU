@@ -7,12 +7,15 @@ import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +34,17 @@ public class NewsAppActivity extends AppCompatActivity
      * TextView that is displayed when the list is empty
      */
     private TextView mEmptyStateTextView;
+    /**
+     * Toolbar
+     */
+    Toolbar toolbar;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_app);
+        toolbar = findViewById(R.id.toolbar);
         // Find a reference to the {@link ListView} in the layout
         ListView newsAppListView = findViewById(R.id.list);
         mEmptyStateTextView = findViewById(R.id.empty_view);
@@ -83,6 +92,10 @@ public class NewsAppActivity extends AppCompatActivity
             loadingIndicator.setVisibility(View.GONE);
             // Update empty state with no connection error message
             mEmptyStateTextView.setText(R.string.no_internet_connection);
+            mEmptyStateTextView.setBackgroundResource(R.drawable.text_background);
+            mEmptyStateTextView.setPadding(16, 16, 16, 16);
+            mEmptyStateTextView.setTextSize(24);
+            toolbar.setVisibility(View.GONE);
         }
     }
 
@@ -92,6 +105,7 @@ public class NewsAppActivity extends AppCompatActivity
         return new NewsAppLoader(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onLoadFinished(Loader<List<NewsApp>> loader, List<NewsApp> newsApps) {
         // Hide loading indicator because the data has been loaded
@@ -99,6 +113,10 @@ public class NewsAppActivity extends AppCompatActivity
         loadingIndicator.setVisibility(View.GONE);
         // Set empty state text to display "No news found."
         mEmptyStateTextView.setText(R.string.no_news);
+        mEmptyStateTextView.setBackgroundResource(R.drawable.text_background);
+        mEmptyStateTextView.setPadding(16, 16, 16, 16);
+        mEmptyStateTextView.setTextSize(24);
+        toolbar.setVisibility(View.GONE);
         // If there is a valid list of {@link NewsApp}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (newsApps != null && !newsApps.isEmpty()) {
@@ -107,6 +125,7 @@ public class NewsAppActivity extends AppCompatActivity
             mAdapter.clear();
             mAdapter.setNotifyOnChange(true);
             mAdapter.addAll(newsApps);
+            toolbar.setVisibility(View.VISIBLE);
         }
     }
 

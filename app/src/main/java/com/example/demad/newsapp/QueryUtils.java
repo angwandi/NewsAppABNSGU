@@ -31,7 +31,7 @@ public class QueryUtils {
     private static final String LOD_TAG = QueryUtils.class.getSimpleName();
 
     /**
-     * building and manipulating my uri url requests as string
+     * building and manipulating my uri url requests
      */
     private static String createStringUrl() {
         Uri.Builder baseUriBuilder = new Uri.Builder();
@@ -196,7 +196,7 @@ public class QueryUtils {
                     }
                     artAuthor = artAuthorBuilder.toString();
                 }
-                // Create a new {@link NewsApp} object with the artTitle, secName,artDate
+                // Create a new {@link NewsApp} object with the artTitle, secName,artDate,artAuthor and url.
                 NewsApp newsApp = new NewsApp(artTitle, secName, artDate, artAuthor, url);
                 // and url from the JSON response.
                 newsApps.add(newsApp);

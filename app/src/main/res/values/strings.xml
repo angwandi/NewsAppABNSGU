@@ -1,14 +1,7 @@
 <resources>
   <string name="app_name">News App</string>
   <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
-  <string name="no_internet_connection">No internet connection.</string>
+  <string name="no_internet_connection"> Oops! No internet connection.</string>
   <!--Text to display in the list when there are no earthquakes [CHAR LIMIT=NONE]-->
-  <string name="no_news">No news found.</string>
-  <!--JSONArray parse Strings-->
-  <string name="array_results">results</string>
-  <string name="index_webTitle">webTitle</string>
-  <string name="index_sectionName">sectionName</string>
-  <string name="index_webPublicationDate">webPublicationDate</string>
-  <string name="index_webUrl">webUrl</string>
-
+  <string name="no_news">No news, try again later.</string>
 </resources>
