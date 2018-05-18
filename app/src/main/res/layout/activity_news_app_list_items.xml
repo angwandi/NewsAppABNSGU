@@ -9,8 +9,7 @@
 
   <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_height="wrap_content">
 
     <TextView
       android:id="@+id/article_tile"
@@ -28,9 +27,11 @@
     <TextView
       android:id="@+id/article_section"
       style="@style/article_section_style"
-      android:layout_width="wrap_content"
       android:layout_height="0dp"
       android:layout_marginTop="8dp"
+      android:maxLines="1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="@+id/article_tile"
       app:layout_constraintTop_toBottomOf="@+id/article_tile"
       tools:targetApi="lollipop"
