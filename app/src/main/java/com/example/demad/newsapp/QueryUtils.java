@@ -29,6 +29,24 @@ public class QueryUtils {
      * Tag for log message
      */
     private static final String LOD_TAG = QueryUtils.class.getSimpleName();
+    /**
+     * Time for time out in milliseconds
+     */
+    private static final int READ_TIMEOUT = 10000;
+    /**
+     * Time for connection time out in milliseconds
+     */
+    private static final int CONNECTION_TIMEOUT = 15000;
+    /**
+     * keys for the json responses
+     */
+    private static final String KEY_SECTION_NAME = "sectionName";
+    private static final String KEY_JSON_OBJECT_RESPONSE = "response";
+    private static final String KEY_JSON_ARRAY_RESULTS = "results";
+    private static final String KEY_JSON_ARRAY_TAGS = "tags";
+    private static final String KEY_DATE = "webPublicationDate";
+    private static final String KEY_TITLE = "webTitle";
+    private static final String KEY_URL = "webUrl";
 
     /**
      * building and manipulating my uri url requests
@@ -106,8 +124,8 @@ public class QueryUtils {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000/* milliseconds*/);
-            urlConnection.setConnectTimeout(15000/* milliseconds*/);
+            urlConnection.setReadTimeout(READ_TIMEOUT);
+            urlConnection.setConnectTimeout(CONNECTION_TIMEOUT);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
             // If the request was successful (response code 200),
@@ -167,24 +185,24 @@ public class QueryUtils {
         try {
             //Create a JSONObject from the JSON response string
             JSONObject jsonResponse = new JSONObject(newsAppJson);
-            JSONObject jsonResults = jsonResponse.getJSONObject("response");
+            JSONObject jsonResults = jsonResponse.getJSONObject(KEY_JSON_OBJECT_RESPONSE);
             // Extract the JSONArray associated with the key called "results",
-            JSONArray resultsArray = jsonResults.getJSONArray("results");
+            JSONArray resultsArray = jsonResults.getJSONArray(KEY_JSON_ARRAY_RESULTS);
             // For each article news in the newsAppArray, create an {@link NewsApp} object
             for (int i = 0; i < resultsArray.length(); i++) {
                 //Get a single article news at position i within the list of newsApps
                 JSONObject currentNewsApp = resultsArray.getJSONObject(i);
                 // Extract the value for the key called "sectionName"
-                String secName = currentNewsApp.getString("sectionName");
+                String secName = currentNewsApp.getString(KEY_SECTION_NAME);
                 //Extract the value for the key called "webPublicationDate".
-                String artDate = currentNewsApp.getString("webPublicationDate");
+                String artDate = currentNewsApp.getString(KEY_DATE);
                 artDate = formatDate(artDate);
                 // Extract the value for the key called "webTitle"
-                String artTitle = currentNewsApp.getString("webTitle");
+                String artTitle = currentNewsApp.getString(KEY_TITLE);
                 //Extract the value for the key called"webUrl"
-                String url = currentNewsApp.getString("webUrl");
+                String url = currentNewsApp.getString(KEY_URL);
                 //Extract the value of the author
-                JSONArray tagsArray = currentNewsApp.getJSONArray("tags");
+                JSONArray tagsArray = currentNewsApp.getJSONArray(KEY_JSON_ARRAY_TAGS);
                 String artAuthor;
                 if (tagsArray.length() == 0) {
                     artAuthor = null;
@@ -192,7 +210,7 @@ public class QueryUtils {
                     StringBuilder artAuthorBuilder = new StringBuilder();
                     for (int j = 0; j < tagsArray.length(); j++) {
                         JSONObject objectPositionOne = tagsArray.getJSONObject(j);
-                        artAuthorBuilder.append(objectPositionOne.getString("webTitle")).append(". ");
+                        artAuthorBuilder.append(objectPositionOne.getString(KEY_TITLE)).append(". ");
                     }
                     artAuthor = artAuthorBuilder.toString();
                 }
