@@ -7,23 +7,23 @@ public class NewsApp {
     /**
      * Article title for news
      */
-    private String mArticle_title;
+    private String article_title;
     /**
      * Article section for the news
      */
-    private String mArticle_section;
+    private String article_section;
     /**
      * Date of the article news
      */
-    private String mDate;
+    private String date;
     /**
      * Author of the article news
      */
-    private String mAuthor;
+    private String author;
     /**
      * Website URL of the article news
      */
-    private String mUrl;
+    private String url;
 
     /**
      * Constructs a new {@link NewsApp} object
@@ -35,45 +35,45 @@ public class NewsApp {
      * @param url            is the url of the article news
      */
     NewsApp(String articleTitle, String articleSection, String date, String author, String url) {
-        mArticle_title = articleTitle;
-        mArticle_section = articleSection;
-        mDate = date;
-        mAuthor = author;
-        mUrl = url;
+        article_title = articleTitle;
+        article_section = articleSection;
+        this.date = date;
+        this.author = author;
+        this.url = url;
     }
 
     /**
      * Returns the article title of the article news
      */
     public String getArticle_title() {
-        return mArticle_title;
+        return article_title;
     }
 
     /**
      * Returns the article section of the article news
      */
     public String getArticle_section() {
-        return mArticle_section;
+        return article_section;
     }
 
     /**
      * Returns the date of the article news
      */
     public String getDate() {
-        return mDate;
+        return date;
     }
 
     /**
      * Returns the author of the article
      */
     public String getAuthor() {
-        return mAuthor;
+        return author;
     }
 
     /**
      * Returns the website url of the article news
      */
     public String getUrl() {
-        return mUrl;
+        return url;
     }
 }
