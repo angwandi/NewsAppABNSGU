@@ -1,59 +1,64 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/materialCardView"
   style="@style/material_card_style"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
   app:cardBackgroundColor="#f5f5f5">
 
-  <TextView
-    android:id="@+id/article_tile"
-    style="@style/article_title_style"
-    android:layout_width="0dp"
+  <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="8dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginStart="8dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:text="Article Title, It will the longest Title you've never seen in your life my friend." />
+    android:padding="8dp">
 
-  <TextView
-    android:id="@+id/article_section"
-    style="@style/article_section_style"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/article_tile"
-    tools:targetApi="lollipop"
-    tools:text="Article Section" />
+    <TextView
+      android:id="@+id/article_tile"
+      style="@style/article_title_style"
+      android:layout_width="0dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Article Title, It will the longest title you've never ever seen in your life mate. " />
 
-  <TextView
-    android:id="@+id/article_date"
-    style="@style/article_date_style"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginStart="8dp"
-    app:layout_constraintBaseline_toBaselineOf="@+id/author"
-    app:layout_constraintEnd_toStartOf="@+id/author"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:text="May 10, 2018" />
+    <TextView
+      android:id="@+id/article_section"
+      style="@style/article_section_style"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="@+id/article_tile"
+      app:layout_constraintTop_toBottomOf="@+id/article_tile"
+      tools:targetApi="lollipop"
+      tools:text="Article Section" />
 
-  <TextView
-    android:id="@+id/author"
-    style="@style/article_author_style"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="7dp"
-    android:layout_marginRight="7dp"
-    android:layout_marginTop="137dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/article_date"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:text="Dema Innocent" />
-</android.support.constraint.ConstraintLayout>
+    <TextView
+      android:id="@+id/article_date"
+      style="@style/article_date_style"
+      android:layout_width="88dp"
+      android:layout_height="28dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="@+id/article_section"
+      app:layout_constraintTop_toBottomOf="@+id/article_section"
+      tools:text="May 10, 2018" />
+
+    <TextView
+      android:id="@+id/author"
+      style="@style/article_author_style"
+      android:layout_marginEnd="8dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginStart="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintRight_toRightOf="@+id/article_date"
+      app:layout_constraintStart_toEndOf="@+id/article_date"
+      app:layout_constraintTop_toTopOf="@+id/article_date"
+      tools:text="John Smith John SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn Smith" />
+  </android.support.constraint.ConstraintLayout>
+</android.support.design.card.MaterialCardView>
+
+
