@@ -4,4 +4,24 @@
   <string name="no_internet_connection"> Oops! No internet connection.</string>
   <!--Text to display in the list when there are no earthquakes [CHAR LIMIT=NONE]-->
   <string name="no_news">No news, try again later.</string>
+  <!--Setting Activity-->
+  <string name="settings_menu_item">Settings</string>
+  <string name="settings_title">News Settings</string>
+  <!--String for the Preference Labels-->
+  <string name="settings_item_per_page_label">Item Per Page</string>
+  <string name="settings_item_per_page_key">page_size</string>
+  <string name="settings_item_per_page_default">1</string>
+  <!-- Strings For Topic Category Preference [CHAR LIMIT=30] -->
+  <string name="settings_topic_category_label">Topic Category</string>
+  <string name="settings_topic_category_key">topic_category</string>
+  <string name="settings_topic_category_by_default">@string/settings_topic_category_UK_news_value</string>
+  <!-- Label for topic category music option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_music_label">Music</string>
+  <string name="settings_topic_category_music_value">music</string>
+  <!-- Label for topic category politic option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_politic_label">Politic</string>
+  <string name="settings_topic_category_politic_value">politic</string>
+  <!-- Label for topic category UK news option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_UK_news_label">UK-news</string>
+  <string name="settings_topic_category_UK_news_value">uk-news</string>
 </resources>

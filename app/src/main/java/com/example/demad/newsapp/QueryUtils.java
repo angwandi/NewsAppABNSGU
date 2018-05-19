@@ -73,7 +73,7 @@ public class QueryUtils {
                 .appendQueryParameter("page-size", "50")
                 //q parameter can be something like education,debate,economy,immigration,...
                 //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
-                .appendQueryParameter("q", " ")
+                .appendQueryParameter("q","")
                 //Free student key from the Guardian API website
                 .appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
         String url;
