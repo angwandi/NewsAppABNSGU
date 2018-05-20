@@ -28,7 +28,7 @@ public class NewsAppActivity extends AppCompatActivity
      * URL for earthquake data from the GUARDIAN data set
      */
     private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?";
+            "https://content.guardianapis.com/search";
     /**
      * Constant value for the newsApp loader ID.
      * Just in case multiple loaders are required at some stage
@@ -144,9 +144,12 @@ public class NewsAppActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("lang", "en");
         //default items per page is 10 but can get more(1-50)!!
         uriBuilder.appendQueryParameter("page-size", itemPerPage);
+        if (!topicCategory.equals(getString(R.string.settings_topic_category_by_default))) {
+            uriBuilder.appendQueryParameter("section", topicCategory);
+        }
         //q parameter can be something like education,debate,economy,immigration,...
         //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
-        uriBuilder.appendQueryParameter("q", topicCategory);
+        uriBuilder.appendQueryParameter("q", "");
         //Free student key from the Guardian API website
         uriBuilder.appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
         return new NewsAppLoader(this, uriBuilder.toString());

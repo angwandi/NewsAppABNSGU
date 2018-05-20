@@ -8,20 +8,29 @@
   <string name="settings_menu_item">Settings</string>
   <string name="settings_title">News Settings</string>
   <!--String for the Preference Labels-->
-  <string name="settings_item_per_page_label">Item Per Page</string>
+  <string name="settings_item_per_page_label">Item Per Page (1 – 50)</string>
   <string name="settings_item_per_page_key">page_size</string>
-  <string name="settings_item_per_page_default">1</string>
+  <string name="settings_item_per_page_default">50</string>
   <!-- Strings For Topic Category Preference [CHAR LIMIT=30] -->
-  <string name="settings_topic_category_label">Topic Category</string>
+  <string name="settings_topic_category_label">Topic</string>
   <string name="settings_topic_category_key">topic_category</string>
-  <string name="settings_topic_category_by_default">@string/settings_topic_category_UK_news_value</string>
+  <string name="settings_topic_category_by_default">@string/settings_all_topic_category_value</string>
+  <!-- Label for All topic category  option [CHAR LIMIT=20] -->
+  <string name="settings_all_topic_category_label">All</string>
+  <string name="settings_all_topic_category_value">""</string>
   <!-- Label for topic category music option [CHAR LIMIT=20] -->
   <string name="settings_topic_category_music_label">Music</string>
   <string name="settings_topic_category_music_value">music</string>
   <!-- Label for topic category politic option [CHAR LIMIT=20] -->
   <string name="settings_topic_category_politic_label">Politic</string>
-  <string name="settings_topic_category_politic_value">politic</string>
-  <!-- Label for topic category UK news option [CHAR LIMIT=20] -->
-  <string name="settings_topic_category_UK_news_label">UK-news</string>
-  <string name="settings_topic_category_UK_news_value">uk-news</string>
+  <string name="settings_topic_category_politic_value">politics</string>
+  <!-- Label for topic category Football option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_football_label">Football</string>
+  <string name="settings_topic_category_football_value">football</string>
+  <!-- Label for topic category Sport option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_sport_label">Sport</string>
+  <string name="settings_topic_category_sport_value">sport</string>
+  <!-- Label for topic category Business option [CHAR LIMIT=20] -->
+  <string name="settings_topic_category_business_label">Business</string>
+  <string name="settings_topic_category_business_value">business</string>
 </resources>

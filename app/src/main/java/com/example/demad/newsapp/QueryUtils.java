@@ -37,6 +37,10 @@ public class QueryUtils {
      */
     private static final int CONNECTION_TIMEOUT = 15000;
     /**
+     * Successful response code
+     */
+    private static final int SUCCESSFUL_RESPONSE_CODE = 200;
+    /**
      * keys for the json responses
      */
     private static final String KEY_SECTION_NAME = "sectionName";
@@ -51,9 +55,9 @@ public class QueryUtils {
      * building and manipulating my uri url requests
      */
     public static List<NewsApp> fetchNewsAppData(String requestUrl) {
-//        Create URL object
+        //Create URL object
         URL url = createUrl(requestUrl);
-//    Perform HTTP request to the URL and receive a JSON response back
+        //Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
@@ -114,7 +118,7 @@ public class QueryUtils {
             urlConnection.connect();
             // If the request was successful (response code 200),
             // then read the input stream and parse the response.
-            if (urlConnection.getResponseCode() == 200) {
+            if (urlConnection.getResponseCode() == SUCCESSFUL_RESPONSE_CODE) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } else {

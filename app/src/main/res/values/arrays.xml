@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string-array name="settings_topic_category_by_labels">
+    <item>@string/settings_all_topic_category_label</item>
     <item>@string/settings_topic_category_music_label</item>
     <item>@string/settings_topic_category_politic_label</item>
-    <item>@string/settings_topic_category_UK_news_label</item>
+    <item>@string/settings_topic_category_football_label</item>
+    <item>@string/settings_topic_category_sport_label</item>
+    <item>@string/settings_topic_category_business_label</item>
   </string-array>
   <string-array name="settings_topic_category_by_value">
+    <item>@string/settings_all_topic_category_value</item>
     <item>@string/settings_topic_category_music_value</item>
     <item>@string/settings_topic_category_politic_value</item>
-    <item>@string/settings_topic_category_UK_news_value</item>
+    <item>@string/settings_topic_category_football_value</item>
+    <item>@string/settings_topic_category_sport_value</item>
+    <item>@string/settings_topic_category_business_value</item>
   </string-array>
 </resources>
