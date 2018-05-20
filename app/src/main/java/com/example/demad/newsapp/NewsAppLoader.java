@@ -2,10 +2,7 @@ package com.example.demad.newsapp;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.util.Log;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 /**
  * Loads a list of news by using an AsyncTaskLoader to perform the
@@ -13,17 +10,19 @@ import java.util.List;
  */
 public class NewsAppLoader extends AsyncTaskLoader<List<NewsApp>> {
     /**
-     * Tag for log messages
+     * Query URL
      */
-    private static final String LOD_TAG = NewsAppLoader.class.getSimpleName();
+    private String mUrl;
 
     /**
      * Constructs a new {@link NewsAppLoader}.
      *
      * @param context of the activity
+     * @param url     to load data from
      */
-    NewsAppLoader(Context context) {
+    NewsAppLoader(Context context, String url) {
         super(context);
+        mUrl = url;
     }
 
     @Override
@@ -37,15 +36,10 @@ public class NewsAppLoader extends AsyncTaskLoader<List<NewsApp>> {
      */
     @Override
     public List<NewsApp> loadInBackground() {
-        List<NewsApp> newsApps = null;
-        try {
-            URL url = QueryUtils.createUrl();
-            //Perform the network request, and extract a list of article news.
-            String jsonResponse = QueryUtils.makeHttpRequest(url);
-            newsApps = QueryUtils.extractFeatureFromJson(jsonResponse);
-        } catch (IOException e) {
-            Log.e(LOD_TAG, "Problem Making HTTP request");
+        if (mUrl == null) {
+            return null;
         }
-        return newsApps;
+        // Perform the network request, parse the response, and extract a list of article news.
+        return QueryUtils.fetchNewsAppData(mUrl);
     }
 }

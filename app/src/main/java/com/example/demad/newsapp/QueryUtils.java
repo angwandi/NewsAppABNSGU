@@ -1,6 +1,5 @@
 package com.example.demad.newsapp;
 
-import android.net.Uri;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -51,47 +50,32 @@ public class QueryUtils {
     /**
      * building and manipulating my uri url requests
      */
-    private static String createStringUrl() {
-        Uri.Builder baseUriBuilder = new Uri.Builder();
-        /*Please refer to the Guardian API website for more details*/
-        baseUriBuilder.scheme("https")
-                .encodedAuthority("content.guardianapis.com")
-                /*Using search content endpoint to return all pieces of content in the API*/
-                /*can also be tags,sections,editions but remember to update your required data*/
-                .appendPath("search")
-                //Format parameter
-                .appendQueryParameter("format", "json")
-                //can be oldest,newest or relevance(default where q params is specified)
-                .appendQueryParameter("order-by", "newest")
-                /*can be author,isbn,imdb,basic-prefix,...*/
-                .appendQueryParameter("show-reference", "author")
-                /*can be all,contributor,keyword,newspaper-book,publication,series,tone,type,...*/
-                .appendQueryParameter("show-tags", "contributor")
-                /*language parameter(ISO language code:fr,en)*/
-                .appendQueryParameter("lang", "en")
-                //default items per page is 10 but can get more(1-50)!!
-                .appendQueryParameter("page-size", "50")
-                //q parameter can be something like education,debate,economy,immigration,...
-                //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
-                .appendQueryParameter("q","")
-                //Free student key from the Guardian API website
-                .appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
-        String url;
-        url = baseUriBuilder.build().toString();
-        return url;
+    public static List<NewsApp> fetchNewsAppData(String requestUrl) {
+//        Create URL object
+        URL url = createUrl(requestUrl);
+//    Perform HTTP request to the URL and receive a JSON response back
+        String jsonResponse = null;
+        try {
+            jsonResponse = makeHttpRequest(url);
+        } catch (IOException e) {
+            Log.e(LOD_TAG, "Problem making the HTTP request.", e);
+        }
+        // Extract relevant fields from the JSON response and create a list of {@link NewsApp}s
+        // Return the list of {@link NewsApp}s
+        return extractFeatureFromJson(jsonResponse);
     }
 
     /**
      * Return new URL object from the given string URL
      */
-    static URL createUrl() {
-        String url = createStringUrl();
+    private static URL createUrl(String stringUrl) {
+        URL url = null;
         try {
-            return new URL(url);
+            url = new URL(stringUrl);
         } catch (MalformedURLException e) {
             Log.e(LOD_TAG, "Problem building the URL", e);
-            return null;
         }
+        return url;
     }
 
     /**
@@ -114,7 +98,7 @@ public class QueryUtils {
     /**
      * Make an HTTP request to the given URL and return a String as the response.
      */
-    static String makeHttpRequest(URL url) throws IOException {
+    private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
         //If the URL is null, then return early.
         if (url == null) {
@@ -176,7 +160,7 @@ public class QueryUtils {
      * <p>
      * parsing the given JSON response.
      */
-    static List<NewsApp> extractFeatureFromJson(String newsAppJson) {
+    private static List<NewsApp> extractFeatureFromJson(String newsAppJson) {
         // Create an empty ArrayList that we can start adding newsApps to
         List<NewsApp> newsApps = new ArrayList<>();
         // Try to parse the JSON response string. If there's a problem with the way the JSON

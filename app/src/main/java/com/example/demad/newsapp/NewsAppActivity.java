@@ -19,12 +19,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 public class NewsAppActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<NewsApp>>, SharedPreferences.OnSharedPreferenceChangeListener {
+    /**
+     * URL for earthquake data from the GUARDIAN data set
+     */
+    private static final String GUARDIAN_REQUEST_URL =
+            "https://content.guardianapis.com/search?";
     /**
      * Constant value for the newsApp loader ID.
      * Just in case multiple loaders are required at some stage
@@ -38,10 +42,6 @@ public class NewsAppActivity extends AppCompatActivity
      * TextView that is displayed when the list is empty
      */
     private TextView mEmptyStateTextView;
-    /**
-     * Toolbar
-     */
-    Toolbar toolbar;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -53,7 +53,7 @@ public class NewsAppActivity extends AppCompatActivity
         mEmptyStateTextView = findViewById(R.id.empty_view);
         newsAppListView.setEmptyView(mEmptyStateTextView);
         // Create a new adapter that takes an empty list of newsApps as input
-         mAdapter = new NewsAppAdapter(this, new ArrayList<NewsApp>());
+        mAdapter = new NewsAppAdapter(this, new ArrayList<NewsApp>());
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         newsAppListView.setAdapter(mAdapter);
@@ -122,7 +122,7 @@ public class NewsAppActivity extends AppCompatActivity
     }
 
     @Override
-    public Loader<List<NewsApp>> onCreateLoader(int id, Bundle args) {
+    public Loader<List<NewsApp>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
         String itemPerPage = sharedPreferences.getString(
@@ -131,8 +131,25 @@ public class NewsAppActivity extends AppCompatActivity
         String topicCategory = sharedPreferences.getString(
                 getString(R.string.settings_topic_category_key),
                 getString(R.string.settings_topic_category_by_default));
-        // Create a new loader for the given URL
-        return new NewsAppLoader(this);
+        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+        uriBuilder.appendQueryParameter("format", "json");
+        //can be oldest,newest or relevance(default where q params is specified)
+        uriBuilder.appendQueryParameter("order-by", "newest");
+        /*can be author,isbn,imdb,basic-prefix,...*/
+        uriBuilder.appendQueryParameter("show-reference", "author");
+        /*can be all,contributor,keyword,newspaper-book,publication,series,tone,type,...*/
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        /*language parameter(ISO language code:fr,en)*/
+        uriBuilder.appendQueryParameter("lang", "en");
+        //default items per page is 10 but can get more(1-50)!!
+        uriBuilder.appendQueryParameter("page-size", itemPerPage);
+        //q parameter can be something like education,debate,economy,immigration,...
+        //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
+        uriBuilder.appendQueryParameter("q", topicCategory);
+        //Free student key from the Guardian API website
+        uriBuilder.appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
+        return new NewsAppLoader(this, uriBuilder.toString());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -165,15 +182,15 @@ public class NewsAppActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings){
-            Intent settingsIntent = new Intent(this,SettingsActivity.class);
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
             return true;
         }
