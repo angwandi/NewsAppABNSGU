@@ -14,8 +14,27 @@ In the most recent portion of the Nanodegree program, you added a Preference scr
 ## What will I learn?
 This project is about combining various ideas and skills we’ve been practicing throughout the course. They include:
 
-Implement the Preference Fragment
-Launch a Settings Activity from a menu in the Main Activity
-Use Uri.Builder class to add query parameters to the URL
-Update and display the Preference Summary
+* Implement the Preference Fragment
+* Launch a Settings Activity from a menu in the Main Activity
+* Use Uri.Builder class to add query parameters to the URL
+* Update and display the Preference Summary
+
 Note: As the focus of this program is Java, only projects completed with Java as the source code will be accepted. Projects using Kotlin as the source code will not be accepted.
+
+### Udacity Code of conduct on plagiarism:
+https://udacity.zendesk.com/hc/en-us/categories/360000151251-Plagiarism
+
+## Video:
+https://www.youtube.com/watch?v=oA2RqZK7JZo&t=28s
+
+## ScreenShots
+> Made by 2ms
+![screener_1526858810227](https://user-images.githubusercontent.com/31923567/40304949-70e5e546-5cf0-11e8-830e-624f13edf50e.png)
+![screener_1526858889670](https://user-images.githubusercontent.com/31923567/40304953-72c19ac2-5cf0-11e8-8500-5ddf70f53eb3.png)
+![screener_1526858922874](https://user-images.githubusercontent.com/31923567/40304954-75751f8c-5cf0-11e8-814e-8283ba961b50.png)
+![screener_1526858958765](https://user-images.githubusercontent.com/31923567/40304959-782a9f2c-5cf0-11e8-8a47-e5c12976fc5d.png)
+![screener_1526858995580](https://user-images.githubusercontent.com/31923567/40304963-7b0cbdba-5cf0-11e8-9fcc-f2c535c5090c.png)
+![screener_1526859028492](https://user-images.githubusercontent.com/31923567/40304965-7c8f1084-5cf0-11e8-9235-370d9f1084b3.png)
+![screener_1526899332551](https://user-images.githubusercontent.com/31923567/40304967-7e2d8a60-5cf0-11e8-9aef-29b268ad727e.png)
+![screener_1526899565275](https://user-images.githubusercontent.com/31923567/40304968-7f6f5688-5cf0-11e8-85ce-3da9eae444b4.png)
+> MAde by 2ms
