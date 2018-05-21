@@ -4,7 +4,7 @@
   android:id="@+id/materialCardView"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  app:cardBackgroundColor="#f5f5f5">
+  app:cardBackgroundColor="@color/colorMaterialCardView_background_color">
 
   <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -12,16 +12,7 @@
 
     <TextView
       android:id="@+id/article_tile"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="8dp"
-      android:layout_marginLeft="8dp"
-      android:layout_marginRight="8dp"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
-      android:includeFontPadding="true"
-      android:textColor="@color/colorArticleTitle_textColor"
-      android:textSize="@dimen/dim_article_title_textSize"
+      style="@style/article_title_style"
       app:fontFamily="@font/abhaya_libre_medium"
       app:layout_constraintBottom_toTopOf="@+id/article_section"
       app:layout_constraintEnd_toEndOf="parent"
@@ -32,17 +23,7 @@
 
     <TextView
       android:id="@+id/article_section"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="8dp"
-      android:layout_marginRight="8dp"
-      android:layout_marginTop="8dp"
-      android:background="@drawable/text_background"
-      android:backgroundTint="@color/colorArticleSection_backgroundTint"
-      android:maxLines="1"
-      android:padding="@dimen/dim_article_section_padding"
-      android:textColor="@color/colorArticleSection_textColor"
-      android:textSize="@dimen/dim_article_section_textSize"
+      style="@style/article_section_style"
       app:layout_constraintBottom_toTopOf="@+id/article_date"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
@@ -53,12 +34,7 @@
 
     <TextView
       android:id="@+id/article_date"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="8dp"
-      android:paddingEnd="8dp"
-      android:paddingRight="8dp"
-      android:paddingStart="8dp"
+      style="@style/article_date_style"
       app:layout_constraintEnd_toStartOf="@+id/author"
       app:layout_constraintStart_toStartOf="@+id/article_section"
       app:layout_constraintTop_toBottomOf="@+id/article_section"
@@ -66,15 +42,7 @@
 
     <TextView
       android:id="@+id/author"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="8dp"
-      android:layout_marginLeft="8dp"
-      android:layout_marginRight="8dp"
-      android:layout_marginStart="8dp"
-      android:gravity="end"
-      android:paddingBottom="8dp"
-      android:textSize="12sp"
+      style="@style/author_style"
       app:layout_constraintBaseline_toBaselineOf="@+id/article_date"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintRight_toRightOf="@+id/article_date"

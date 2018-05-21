@@ -1,9 +1,86 @@
-<resources >
+<resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
   <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="article_section_style">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_section_margin
+    </item>
+    <item name="android:layout_marginRight">@dimen/dim_article_section_margin</item>
+    <item name="android:layout_marginTop">@dimen/dim_article_section_padding</item>
+    <item name="android:background">@drawable/text_background</item>
+    <item name="android:backgroundTint" tools:targetApi="lollipop">
+      @color/colorArticleSection_backgroundTint
+    </item>
+    <item name="android:maxLines">1</item>
+    <item name="android:padding">@dimen/dim_article_section_padding</item>
+    <item name="android:textColor">@color/colorArticleSection_textColor</item>
+    <item name="android:textSize">@dimen/dim_article_section_textSize</item>
+  </style>
+
+  <style name="article_title_style">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_title_margin
+    </item>
+    <item name="android:layout_marginLeft">@dimen/dim_article_section_margin</item>
+    <item name="android:layout_marginRight">@dimen/dim_article_title_margin</item>
+    <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_title_margin
+    </item>
+    <item name="android:layout_marginTop">@dimen/dim_article_title_margin</item>
+    <item name="android:includeFontPadding">true</item>
+    <item name="android:textColor">@color/colorArticleTitle_textColor</item>
+    <item name="android:textSize">@dimen/dim_article_title_textSize</item>
+  </style>
+
+  <style name="article_date_style">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginTop">@dimen/dim_article_date_marginTop</item>
+    <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_date_padding
+    </item>
+    <item name="android:paddingRight">@dimen/dim_article_date_padding</item>
+    <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_date_padding
+    </item>
+    <item name="android:paddingLeft">@dimen/dim_article_date_padding</item>
+    <item name="android:paddingBottom">@dimen/dim_article_date_padding</item>
+  </style>
+
+  <style name="author_style">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_author_margin
+    </item>
+    <item name="android:layout_marginLeft">@dimen/dim_article_author_margin</item>
+    <item name="android:paddingBottom">@dimen/dim_article_author_margin</item>
+    <item name="android:layout_marginRight">@dimen/dim_article_author_margin</item>
+    <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+      @dimen/dim_article_author_margin
+    </item>
+    <item name="android:gravity">end</item>
+    <item name="android:textSize">@dimen/dim_article_author_textSize</item>
+  </style>
+
+  <style name="listView_style">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:clipToPadding">false</item>
+    <item name="android:divider">@android:color/transparent</item>
+    <item name="android:dividerHeight">@dimen/dim_list_view_divider_height</item>
+    <item name="android:nestedScrollingEnabled" tools:targetApi="lollipop">true</item>
+    <item name="android:padding">@dimen/dim_list_view_padding</item>
+    <item name="android:scrollbars">none</item>
   </style>
 </resources>

@@ -8,14 +8,7 @@
 
   <ListView
     android:id="@+id/list"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clipToPadding="false"
-    android:divider="@android:color/transparent"
-    android:dividerHeight="10dp"
-    android:nestedScrollingEnabled="true"
-    android:padding="8dp"
-    android:scrollbars="none"
+    style="@style/listView_style"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="1.0"
@@ -24,7 +17,6 @@
     app:layout_constraintVertical_bias="0.0"
     tools:listitem="@layout/activity_news_app_list_items"
     tools:targetApi="lollipop" />
-  <!-- Empty view is only visible when the list has no items. -->
   <!-- Loading indicator is only shown before the first load -->
   <ProgressBar
     android:id="@+id/loading_indicator"
@@ -36,7 +28,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.439" />
-
+  <!-- Empty view is only visible when the list has no items. -->
   <TextView
     android:id="@+id/empty_view"
     android:layout_width="wrap_content"

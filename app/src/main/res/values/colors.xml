@@ -10,4 +10,5 @@
   <color name="colorArticleSection_backgroundTint">@color/colorLightPrimary</color>
   <color name="colorArticleSection_textColor">@color/colorPrimaryText</color>
   <color name="colorArticleTitle_textColor">@color/colorPrimaryText</color>
+  <color name="colorMaterialCardView_background_color">#f5f5f5</color>
 </resources>

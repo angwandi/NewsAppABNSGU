@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <!--Article Section dimensions-->
-  <dimen name="dim_article_section_marginBottom">8dp</dimen>
+  <dimen name="dim_article_section_margin">8dp</dimen>
   <dimen name="dim_article_section_padding">8dp</dimen>
   <dimen name="dim_article_section_textSize">12sp</dimen>
   <!--Article Title dimensions-->
-  <dimen name="dim_article_title_marginBottom">8dp</dimen>
+  <dimen name="dim_article_title_margin">8dp</dimen>
   <dimen name="dim_article_title_textSize">24sp</dimen>
   <!--Article Date dimensions-->
   <dimen name="dim_article_date_textSize">12sp</dimen>
+  <dimen name="dim_article_date_marginTop">8dp</dimen>
+  <dimen name="dim_article_date_padding">8dp</dimen>
   <!--Article Author dimensions-->
   <dimen name="dim_article_author_textSize">12sp</dimen>
-  <!--Title Section Layout dimensions-->
-  <dimen name="dim_title_section_layout_paddingLeft">8dp</dimen>
-  <dimen name="dim_title_section_layout_paddingRight">8dp</dimen>
-  <!--Date and Author Layout dimensions-->
-  <dimen name="dim_date_author_layout_marginBottom">8dp</dimen>
+  <dimen name="dim_article_author_margin">8dp</dimen>
+  <dimen name="dim_article_author_paddingBottom">8dp</dimen>
   <!--ListView dimensions-->
   <dimen name="dim_list_view_divider_height">10dp</dimen>
-  <dimen name="dim_list_view_divider_padding">16dp</dimen>
+  <dimen name="dim_list_view_padding">8dp</dimen>
 </resources>

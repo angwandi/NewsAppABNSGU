@@ -18,7 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
             extends PreferenceFragment
             implements Preference.OnPreferenceChangeListener {
         @Override
-        public void onCreate( Bundle savedInstanceState) {
+        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
             Preference pageSize = findPreference(getString(R.string.settings_item_per_page_key));
