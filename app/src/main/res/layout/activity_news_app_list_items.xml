@@ -2,7 +2,6 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/materialCardView"
-  style="@style/material_card_style"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   app:cardBackgroundColor="#f5f5f5">
@@ -13,11 +12,18 @@
 
     <TextView
       android:id="@+id/article_tile"
-      style="@style/article_title_style"
       android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
       android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
       android:layout_marginStart="8dp"
       android:layout_marginTop="8dp"
+      android:includeFontPadding="true"
+      android:textColor="@color/colorArticleTitle_textColor"
+      android:textSize="@dimen/dim_article_title_textSize"
+      app:fontFamily="@font/abhaya_libre_medium"
+      app:layout_constraintBottom_toTopOf="@+id/article_section"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +32,18 @@
 
     <TextView
       android:id="@+id/article_section"
-      style="@style/article_section_style"
-      android:layout_height="0dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:layout_marginRight="8dp"
       android:layout_marginTop="8dp"
+      android:background="@drawable/text_background"
+      android:backgroundTint="@color/colorArticleSection_backgroundTint"
       android:maxLines="1"
+      android:padding="@dimen/dim_article_section_padding"
+      android:textColor="@color/colorArticleSection_textColor"
+      android:textSize="@dimen/dim_article_section_textSize"
+      app:layout_constraintBottom_toTopOf="@+id/article_date"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="@+id/article_tile"
@@ -39,26 +53,42 @@
 
     <TextView
       android:id="@+id/article_date"
-      style="@style/article_date_style"
-      android:layout_width="88dp"
-      android:layout_height="28dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:layout_marginTop="8dp"
+      android:paddingEnd="8dp"
+      android:paddingRight="8dp"
+      android:paddingStart="8dp"
+      app:layout_constraintEnd_toStartOf="@+id/author"
       app:layout_constraintStart_toStartOf="@+id/article_section"
       app:layout_constraintTop_toBottomOf="@+id/article_section"
       tools:text="May 10, 2018" />
 
     <TextView
       android:id="@+id/author"
-      style="@style/article_author_style"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
       android:layout_marginEnd="8dp"
       android:layout_marginLeft="8dp"
       android:layout_marginRight="8dp"
       android:layout_marginStart="8dp"
+      android:gravity="end"
+      android:paddingBottom="8dp"
+      android:textSize="12sp"
+      app:layout_constraintBaseline_toBaselineOf="@+id/article_date"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintRight_toRightOf="@+id/article_date"
       app:layout_constraintStart_toEndOf="@+id/article_date"
-      app:layout_constraintTop_toTopOf="@+id/article_date"
-      tools:text="John Smith John SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn SmithJohn Smith" />
+      tools:text="John Smith " />
+
+    <android.support.constraint.Barrier
+      android:id="@+id/barrier3"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:barrierDirection="end"
+      app:constraint_referenced_ids="article_section,article_date"
+      app:layout_constraintHorizontal_weight="0"
+      app:layout_constraintRight_toRightOf="@+id/article_date" />
   </android.support.constraint.ConstraintLayout>
 </android.support.design.card.MaterialCardView>
 

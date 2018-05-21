@@ -30,6 +30,10 @@ public class NewsAppActivity extends AppCompatActivity
     private static final String GUARDIAN_REQUEST_URL =
             "https://content.guardianapis.com/search";
     /**
+     * API student key
+     */
+    private static final String API_STUDENT_KEY = "ee7fcfa8-a253-432e-9e44-80655700e71a";
+    /**
      * Constant value for the newsApp loader ID.
      * Just in case multiple loaders are required at some stage
      */
@@ -136,7 +140,7 @@ public class NewsAppActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("format", "json");
         //can be oldest,newest or relevance(default where q params is specified)
         uriBuilder.appendQueryParameter("order-by", "newest");
-        /*can be author,isbn,imdb,basic-prefix,...*/
+        /*can be author,isbn,basic-prefix,...*/
         uriBuilder.appendQueryParameter("show-reference", "author");
         /*can be all,contributor,keyword,newspaper-book,publication,series,tone,type,...*/
         uriBuilder.appendQueryParameter("show-tags", "contributor");
@@ -151,7 +155,7 @@ public class NewsAppActivity extends AppCompatActivity
         //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
         uriBuilder.appendQueryParameter("q", "");
         //Free student key from the Guardian API website
-        uriBuilder.appendQueryParameter("api-key", "ee7fcfa8-a253-432e-9e44-80655700e71a");
+        uriBuilder.appendQueryParameter("api-key", API_STUDENT_KEY);
         return new NewsAppLoader(this, uriBuilder.toString());
     }
 
