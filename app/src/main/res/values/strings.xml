@@ -33,4 +33,17 @@
   <!-- Label for topic category Business option [CHAR LIMIT=20] -->
   <string name="settings_topic_category_business_label">Business</string>
   <string name="settings_topic_category_business_value">business</string>
+  <string name="format">format</string>
+  <string name="order_by">order-by</string>
+  <string name="newest">newest</string>
+  <string name="show_reference">show-reference</string>
+  <string name="author">author</string>
+  <string name="show_tags">show-tags</string>
+  <string name="contributor">contributor</string>
+  <string name="language">lang</string>
+  <string name="default_english">en</string>
+  <string name="page_size">page-size</string>
+  <string name="section">section</string>
+  <string name="key_q">q</string>
+  <string name="api_key">api-key</string>
 </resources>

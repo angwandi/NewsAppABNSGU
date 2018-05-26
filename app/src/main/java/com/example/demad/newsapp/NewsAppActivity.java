@@ -27,8 +27,12 @@ public class NewsAppActivity extends AppCompatActivity
     /**
      * URL for earthquake data from the GUARDIAN data set
      */
-    private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search";
+    private static final String GUARDIAN_REQUEST_URL;
+
+    static {
+        GUARDIAN_REQUEST_URL = "https://content.guardianapis.com/search";
+    }
+
     /**
      * API student key
      */
@@ -38,6 +42,7 @@ public class NewsAppActivity extends AppCompatActivity
      * Just in case multiple loaders are required at some stage
      */
     private static final int NEWSAPP_LOADER_ID = 1;
+    public static final String JSON = "json";
     /**
      * Adapter for the list of news
      */
@@ -137,25 +142,25 @@ public class NewsAppActivity extends AppCompatActivity
                 getString(R.string.settings_topic_category_by_default));
         Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        uriBuilder.appendQueryParameter("format", "json");
+        uriBuilder.appendQueryParameter(getString(R.string.format), JSON);
         //can be oldest,newest or relevance(default where q params is specified)
-        uriBuilder.appendQueryParameter("order-by", "newest");
+        uriBuilder.appendQueryParameter(getString(R.string.order_by), getString(R.string.newest));
         /*can be author,isbn,basic-prefix,...*/
-        uriBuilder.appendQueryParameter("show-reference", "author");
+        uriBuilder.appendQueryParameter(getString(R.string.show_reference), getString(R.string.author));
         /*can be all,contributor,keyword,newspaper-book,publication,series,tone,type,...*/
-        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter(getString(R.string.show_tags), getString(R.string.contributor));
         /*language parameter(ISO language code:fr,en)*/
-        uriBuilder.appendQueryParameter("lang", "en");
+        uriBuilder.appendQueryParameter(getString(R.string.language), getString(R.string.default_english));
         //default items per page is 10 but can get more(1-50)!!
-        uriBuilder.appendQueryParameter("page-size", itemPerPage);
+        uriBuilder.appendQueryParameter(getString(R.string.page_size), itemPerPage);
         if (!topicCategory.equals(getString(R.string.settings_topic_category_by_default))) {
-            uriBuilder.appendQueryParameter("section", topicCategory);
+            uriBuilder.appendQueryParameter(getString(R.string.section), topicCategory);
         }
         //q parameter can be something like education,debate,economy,immigration,...
         //can combine debate AND economy as well(can use these operators :AND,OR,NOT)
-        uriBuilder.appendQueryParameter("q", "");
+        uriBuilder.appendQueryParameter(getString(R.string.key_q), "");
         //Free student key from the Guardian API website
-        uriBuilder.appendQueryParameter("api-key", API_STUDENT_KEY);
+        uriBuilder.appendQueryParameter(getString(R.string.api_key), API_STUDENT_KEY);
         return new NewsAppLoader(this, uriBuilder.toString());
     }
 
