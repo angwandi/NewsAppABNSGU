@@ -19,6 +19,7 @@
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      android:ellipsize="end"
       tools:text="Article Title, It will the longest title you've never ever seen in your life mate. " />
 
     <TextView
