@@ -29,12 +29,5 @@ https://www.youtube.com/watch?v=oA2RqZK7JZo&t=28s
 
 ## ScreenShots
 > Made by 2ms
-![screener_1526858810227](https://user-images.githubusercontent.com/31923567/40304949-70e5e546-5cf0-11e8-830e-624f13edf50e.png)
-![screener_1526858889670](https://user-images.githubusercontent.com/31923567/40304953-72c19ac2-5cf0-11e8-8500-5ddf70f53eb3.png)
-![screener_1526858922874](https://user-images.githubusercontent.com/31923567/40304954-75751f8c-5cf0-11e8-814e-8283ba961b50.png)
-![screener_1526858958765](https://user-images.githubusercontent.com/31923567/40304959-782a9f2c-5cf0-11e8-8a47-e5c12976fc5d.png)
-![screener_1526858995580](https://user-images.githubusercontent.com/31923567/40304963-7b0cbdba-5cf0-11e8-9fcc-f2c535c5090c.png)
-![screener_1526859028492](https://user-images.githubusercontent.com/31923567/40304965-7c8f1084-5cf0-11e8-9235-370d9f1084b3.png)
-![screener_1526899332551](https://user-images.githubusercontent.com/31923567/40304967-7e2d8a60-5cf0-11e8-9aef-29b268ad727e.png)
-![screener_1526899565275](https://user-images.githubusercontent.com/31923567/40304968-7f6f5688-5cf0-11e8-85ce-3da9eae444b4.png)
+![screener_1526858810227](https://user-images.githubusercontent.com/31923567/40304949-70e5e546-5cf0-11e8-830e-624f13edf50e.png)![screener_1526858889670](https://user-images.githubusercontent.com/31923567/40304953-72c19ac2-5cf0-11e8-8500-5ddf70f53eb3.png)![screener_1526858922874](https://user-images.githubusercontent.com/31923567/40304954-75751f8c-5cf0-11e8-814e-8283ba961b50.png)![screener_1526858958765](https://user-images.githubusercontent.com/31923567/40304959-782a9f2c-5cf0-11e8-8a47-e5c12976fc5d.png)![screener_1526858995580](https://user-images.githubusercontent.com/31923567/40304963-7b0cbdba-5cf0-11e8-9fcc-f2c535c5090c.png)![screener_1526859028492](https://user-images.githubusercontent.com/31923567/40304965-7c8f1084-5cf0-11e8-9235-370d9f1084b3.png)![screener_1526899332551](https://user-images.githubusercontent.com/31923567/40304967-7e2d8a60-5cf0-11e8-9aef-29b268ad727e.png)![screener_1526899565275](https://user-images.githubusercontent.com/31923567/40304968-7f6f5688-5cf0-11e8-85ce-3da9eae444b4.png)
 > MAde by 2ms
