@@ -28,6 +28,11 @@ https://udacity.zendesk.com/hc/en-us/categories/360000151251-Plagiarism
 https://www.youtube.com/watch?v=oA2RqZK7JZo&t=28s
 
 ## ScreenShots
-<img src="images_na/na1.png" width="100"> | <img src="images_na/na2.png" width="100"> | <img src="images_na/na3.png" width="100"> | <img src="images_na/na4.png" width="100"> | <img src="images_na/na5.png" width="100"> | <img src="images_na/na6.png" width="100"> | <img src="images_na/na7.png" width="100"> | <img src="images_na/na8.png" width="100"> |
+Screen 1 | Screen 2 | Screen 3 | Screen 4 
+:------: | :------: | :------: | :------: 
+<img src="images_na/na1.png" width="100"> | <img src="images_na/na2.png" width="100"> | <img src="images_na/na3.png" width="100"> | <img src="images_na/na4.png" width="100"> | 
+Screen 5 | Screen 6 | Screen 7 | Screen 8
+:------: | :------: | :------: | :------: 
+<img src="images_na/na5.png" width="100"> | <img src="images_na/na6.png" width="100"> | <img src="images_na/na7.png" width="100"> | <img src="images_na/na8.png" width="100"> 
 
 > Made by 2ms
