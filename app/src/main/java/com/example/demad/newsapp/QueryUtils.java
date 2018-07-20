@@ -76,8 +76,7 @@ public class QueryUtils {
         URL url = null;
         try {
             url = new URL(stringUrl);
-        } catch (MalformedURLException e) {
-            Log.e(LOD_TAG, "Problem building the URL", e);
+        } catch (MalformedURLException ignored) {
         }
         return url;
     }
