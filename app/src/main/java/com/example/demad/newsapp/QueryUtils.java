@@ -61,8 +61,7 @@ public class QueryUtils {
         String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
-        } catch (IOException e) {
-            Log.e(LOD_TAG, "Problem making the HTTP request.", e);
+        } catch (IOException ignored) {
         }
         // Extract relevant fields from the JSON response and create a list of {@link NewsApp}s
         // Return the list of {@link NewsApp}s
@@ -93,7 +92,6 @@ public class QueryUtils {
             SimpleDateFormat resultDateFormatter = new SimpleDateFormat(resultDate, Locale.UK);
             return resultDateFormatter.format(jsonDateToParse);
         } catch (ParseException e) {
-            Log.e(LOD_TAG, "Error Formatting the Json Date", e);
             return "";
         }
     }
@@ -120,11 +118,8 @@ public class QueryUtils {
             if (urlConnection.getResponseCode() == SUCCESSFUL_RESPONSE_CODE) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
-            } else {
-                Log.e(LOD_TAG, "Error response code:" + urlConnection.getResponseCode());
             }
-        } catch (IOException e) {
-            Log.e(LOD_TAG, "Problem retrieving the Article News Json result.", e);
+        } catch (IOException ignored) {
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -210,7 +205,6 @@ public class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e(LOD_TAG, "Problem parsing the newsApp JSON results", e);
         }
         //Return the list of newsApps
         return newsApps;
