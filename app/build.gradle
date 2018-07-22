@@ -1,17 +1,26 @@
 apply plugin: 'com.android.application'
+/*Create a variable called keystorePropertiesFile, and initialize it to your
+keystore.properties file, in the rootProject folder.*/
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     signingConfigs {
         config {
-            keyAlias 'NewsApp'
-            keyPassword '367421iidema2ms'
-            storeFile file('C:/Users/demad/androidKeystore.jks')
-            storePassword '367421iidema'
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePAssword']
         }
     }
     compileSdkVersion 'android-P'
     defaultConfig {
-        applicationId "com.example.demad.newsapp"
+        applicationId "com.play1training.demad.newsapp"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
@@ -24,6 +33,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
+    }
+    productFlavors {
     }
 }
 
